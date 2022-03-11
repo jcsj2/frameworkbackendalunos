@@ -31,4 +31,14 @@ describe("Calculo do desconto", () => {
 
     expect(validaCupom).toBeTruthy();
   });
+
+  test("Deve validar se o cupom não está sendo aplicado", () => {
+    const codigoCupom = "vale10";
+    const dataReferencia = new Date("2022-03-12 02:22:22");
+    const valorPastel = 120;
+    const validaCupom = comprarPastel(valorPastel, codigoCupom, dataReferencia);
+    console.log(validaCupom);
+
+    expect(validaCupom).toBeFalsy();
+  });
 });
